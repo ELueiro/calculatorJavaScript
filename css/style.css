@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: all 0.8s ease;
+}
+
+body {
+  background: linear-gradient(45deg, #3d68a8, #e9e9e9);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.calculator {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgb(114, 125, 190);
+  background-color: #d3d0d0;
+  /* dark theme */
+}
+.calculator #display {
+  color: #333333;
+  background-color: red;
+  margin: 30px 10px;
+  height: 50px;
+  padding: 5px;
+  width: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+.calculator #equal {
+  height: 130px;
+}
+.calculator #clear {
+  background-color: #ff7043;
+  color: #ffffff;
+}
+.calculator .btn-number {
+  background-color: #8bc34a;
+  color: #ffffff;
+}
+.calculator .btn-operator {
+  background-color: #03a9f4;
+  color: #ffffff;
+}
+.calculator .btn-equal {
+  background-color: #ff7043;
+  color: #ffffff;
+}
+.calculator.dark {
+  background-color: #363535;
+}
+.calculator.dark #display {
+  color: #ffffff;
+}
+.calculator.dark #clear {
+  background-color: #ffa726;
+  color: #212121;
+}
+.calculator.dark .btn-number {
+  background-color: #ff4081;
+  color: #212121;
+}
+.calculator.dark .btn-operator {
+  background-color: #00bfa5;
+  color: #212121;
+}
+.calculator.dark .btn-equal {
+  background-color: #ffa726;
+  color: #212121;
+}
+
+.theme-toggler {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+}
+.theme-toggler::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #333;
+  z-index: -1;
+}
+.theme-toggler.active {
+  color: #333;
+}
+.theme-toggler.active::before {
+  background-color: #ffffff;
+}
+
+button {
+  height: 60px;
+  width: 60px;
+  border: 0;
+  border-radius: 30px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,167 @@
+
+// variables ejemplo
+$colorFonfo: green;
+// otro importante es la anidacion
+// otra cosa cool puedo tener varios archivos con sass
+@use "otrosass";
+// otra cosa es el mixin una especie de funciones con parametros que puedes poner dentro las propiedades y valores que quieras que se repitan y usarlas
+
+// @mixin caja($color: white){
+//     background-color: fondo;
+//     margin: 20px;
+//     border: 20px;
+// }
+
+// .divejemplo{
+//     @include caja($fondo: blue)
+// }
+
+// operadores se pueden usar dentro del sass mientras que en css no.
+
+// *************************************************************************************************
+$primario-light: #ff7043;
+$secundario-light: #03a9f4;
+$terciario-light: #8bc34a;
+$complementario-light: #ffffff;
+$fondo-light: #d3d0d0;
+$texto-light: #333333;
+
+$primario-dark: #ffa726;
+$secundario-dark: #00bfa5;
+$terciario-dark: #ff4081;
+$complementario-dark: #212121;
+$fondo-dark: #363535;
+$texto-dark: #ffffff;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: all 0.8s ease;
+}
+body {
+  background: linear-gradient(45deg, #3d68a8, #e9e9e9);
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.calculator {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgb(114, 125, 190);
+  background-color: $fondo-light;
+  #display {
+    color: $texto-light;
+    background-color: red;
+    margin: 30px 10px;
+    height: 50px;
+    padding: 5px;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  #equal {
+    height: 130px;
+  }
+  #clear {
+    background-color: $primario-light;
+    color: $complementario-light;
+  }
+  .btn-number {
+    background-color: $terciario-light;
+    color: $complementario-light;
+  }
+  .btn-operator {
+    background-color: $secundario-light;
+    color: $complementario-light;
+  }
+  .btn-equal {
+    background-color: $primario-light;
+    color: $complementario-light;
+  }
+
+  /* dark theme */
+  &.dark {
+    background-color: $fondo-dark;
+    #display {
+      color: $texto-dark;
+    }
+    #clear {
+      background-color: $primario-dark;
+      color: $complementario-dark;
+    }
+    .btn-number {
+      background-color: $terciario-dark;
+      color: $complementario-dark;
+    }
+    .btn-operator {
+      background-color: $secundario-dark;
+      color: $complementario-dark;
+    }
+    .btn-equal {
+      background-color: $primario-dark;
+      color: $complementario-dark;
+    }
+  }
+}
+
+.theme-toggler {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+  }
+  &.active {
+    color: #333;
+    &::before {
+      background-color: #ffffff;
+    }
+  }
+}
+// .active {
+//   color: #333;
+//   &::before {
+//     background-color: #ffffff;
+//   }
+// }
+
+button {
+  height: 60px;
+  width: 60px;
+  border: 0;
+  border-radius: 30px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+//   el & es el equivalente a poner button:hover
+  &:hover {
+    transform: scale(1.1);
+  }
+}
